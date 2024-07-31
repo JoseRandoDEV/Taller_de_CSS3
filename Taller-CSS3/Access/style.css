@@ -1,0 +1,567 @@
+/*CONFIGURACIONES GENERALES*/
+
+:root {
+    --primary-color: #4f4aa6 ;       /*variables de colores*/
+    --secundary-color: #48ca95 ;
+    --bg-color: #f7f7f7 ;
+    --menu-color:rgb(248, 248, 248); /*color palabras del menu*/
+    --Dark-color: #000; 
+
+    --header-title-font : Poppins-Bold;
+    --seccion-title-font : Poppins-SemiBold;
+    --text-font: Poppins;
+    --menu-font: Poppins-Bold;
+    --banner-subtitle-font: Poppins-ligth;
+    --banner-title-font: Poppins;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--text-font);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/Recursos/Fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(/Recursos/Fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Extra-Bold;
+    src: url(/Recursos/Fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url(/Recursos/Fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+    font-family: Poppins-ligth;
+    src: url(/Recursos/Fonts/Poppins-Light.ttf);
+}
+/*HEADER*/
+
+header {
+    background-image: url(/Recursos/Images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;     /*indicamos que son columnas*/
+    flex-direction: column;
+    min-height: 90vh; /*minimo de altura*/
+}
+
+nav {
+    display: flex; /*al no poner nada por defecto es fila*/
+    justify-content: space-between; /*indicamos la separacion */
+    padding: 20px; /*aplicamos espacio superior*/
+    padding-left: 30px;
+
+}
+
+nav ul {   
+    display: flex;    /*indicamos que a la lista que esta dentro de ul la ubicamos en fila */
+    list-style-type: none; /*quita los puntos o señaladores*/
+    align-items: center; /*alineamos los items del nav centrados*/  
+}
+
+nav ul li {
+    padding: 20px; /*indicamos la sitancias entre los comandos del menu */
+   
+}
+
+nav ul li a {
+    color: var(--menu-color); /*indicamos el color del menu */
+    text-decoration: none; /*quita el subrayado del enlace */
+    font-family: var(--menu-font);
+}
+
+nav ul li a:hover {
+    color: var(--secundary-color); /*indica al estar arriba de los seleccionado cambia al color indicado*/
+}
+
+.selection {
+    color: var(--secundary-color);
+}
+
+.header-img {
+    margin: 10px 25px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 50;
+}
+
+.header-content-text {
+    max-width: 500px;
+    color: var(--menu-color);
+    display: flex; /*indicamos que los textex sean en columnas */
+    flex-direction: column;
+  
+}
+
+.header-content-btns {
+    margin-top: 50px;   /*indico distancia sobre top de los botones */
+}
+
+.header-title {
+    font-size: 80px;
+    font-family: var(--header-title-font);
+}
+
+.header-subtitle {
+    font-size: 39px;
+}
+
+.btn {
+    color: var(--menu-color);
+    padding: 15px 60px;
+    border: 2px solid var(--menu-color);
+    text-decoration: none;
+    margin:  5px 5px; /*distancia desde el comienzo y entre botones*/
+}
+
+.btn:hover {
+    background-color: var(--secundary-color); /*indicamos cuando el mouse este arriba de los botones cambie de colores */
+    border: 2px solid var(--secundary-color);
+}
+
+.menu-mobil {
+    display: none;
+}
+
+@media(max-width:800px) {
+    .menu-mobil {
+        display: flex;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+    .menu-screen {
+        display: none;
+    }
+}
+
+@media(max-width:1300px) {
+    .header-content {
+        flex-direction: column;
+    }
+    .header-content-text {
+        margin-left: 20px;
+    }
+    .header-title {
+        font-size: 40px;
+        font-family: var(--header-title-font);
+    }
+    .header-subtitle {
+        font-size: 20px;
+    }
+    .header-content-text p {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .btn {
+        padding: 10px 30px;
+    }
+    .header-img {
+        margin: 50px 10px;
+        width: 95%;
+        height: 100%;
+        max-width: 600px;
+    }
+}
+
+/*FIN DE HEADER*/
+
+/*CARDS*/
+
+.cards {
+    display: flex;  /*disposiciones de las tarjetas */
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 60px;
+    flex-wrap: wrap;  /*apilar tarjetas modo mobil*/
+}
+.card {
+    margin: 5px;  /*alineacion borde de las tarjetas*/
+    padding: 30px;
+    border: 1px solid var(--secundary-color);
+    border-radius: 15px;
+    max-width: 310px;
+    display: flex;  /*alineacion del contenido */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h5 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.card p {
+    text-align: center;
+}
+
+/*END CARDS*/
+
+/*SECCION PRODUCTOS*/
+
+.products {
+    background-color: var(--bg-color); /*fondo gris*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.seccion-title {
+    text-transform: uppercase; /*TRASNFORMAMOS EL TITULO EN MAYUSCULA*/
+    font-size: 26px;
+    font-family: var(--seccion-title-font);
+    border-bottom: 1px solid var(--secundary-color); /*subrayamos la caja del titulo*/
+    margin-bottom: 25px;
+
+}
+
+.products-container {
+    background-color: white;
+    width: 1000px; /*le damos la anchura y altura al cuadrado blanco que contiene los productos*/
+    display: flex; /*dispone los productos a lo ancho de la pagina*/
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /*hace que las tarjetas las ponga una al lado de la otra y cuendo no entran la baja de linea*/
+    padding-bottom: 25px; /*posicion del boton see more*/
+    margin-bottom: 100px;
+
+}
+
+.product-card {
+    width: 203px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px; /*obtengo la distancia entre elementos*/
+
+}
+
+.product-card a {
+    background-color: var(--Dark-color);
+    color: var(--bg-color);
+    padding: 10px;
+    width: 100%;
+    text-decoration: none; /*quita el subrayado*/
+    text-align: center; /*lo centra*/
+}
+
+.btn-secondary {
+    color: var(--secundary-color);
+    padding: 15px 60px;
+    border: 2px solid var(--secundary-color);
+    text-decoration: none;
+    margin:  5px 5px; /*distancia desde el comienzo y entre botones*/
+}
+
+.btn-secondary:hover {
+    color: var(--menu-color);
+    background-color: var(--secundary-color);
+}
+
+@media(max-width:1200px) { /*adapatamos el diseño corresponsivo al tamaño mobil*/
+    .products-container {
+        width: 96%;
+    }
+}
+
+
+/*BANNER SECCION*/
+
+.banner {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: center; 
+}
+
+.banner-content-text {
+    max-width: 500px;
+    color: var(--menu-color);
+    display: flex; /*indicamos que los textex sean en columnas */
+    flex-direction: column;
+}
+
+.banner-title {
+    font-size: 48px;
+    font-family: var(--banner-title-font);
+}
+
+.banner-subtitle {
+    font-size: 20px;
+    font-family: var(--banner-subtitle-font);
+}
+
+.btn-primary-full {
+    color: var(--menu-color);
+    padding: 15px 60px;
+    border: 2px solid var(--secundary-color);
+    text-decoration: none;
+    margin: 0px 5px; /*distancia desde el comienzo y entre botones*/
+    background-color: var(--secundary-color);
+}
+
+.banner-content-btns {
+    margin-top: 50px;   /*indico distancia sobre top de los botones */
+    margin-bottom: 50px;
+}
+
+.btn-primary-full:hover {
+    color: var(--secundary-color);
+    background-color: var(--primary-color);
+}
+
+.banner-img {
+    margin: 30px 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+}
+
+@media(max-width:800px) {
+    .banner-content {
+        flex-direction: column; 
+        align-items: center;
+    }
+}
+
+/*END BANNER SECCION*/
+
+/*REVIEWS SECCION*/
+
+.reviews {
+    display: flex;  /*A LA SECCION REVIEWS LE DAMOS DISPLAY FLEX, JUSTIFICADO AL CENTRO. ALINEADOS AL CENTRO*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*direccion en columna*/
+    padding-top: 50px; /*separa el titulo de la parte superior*/
+    padding-bottom: 70px; /*separa el titulo por debajo*/
+
+}
+
+.reviews-card {
+    width: 600px;  
+}
+
+.reviews-card h5 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:800px) { /*si la tarjeta tiene 800px un ves que la tarjeta llegue a los 800px se comporte asi*/
+    .reviews-card {
+        width: 90%; /*que la reviews.card tomo el 90% de la imagen asi entra y encuadra bien*/
+    }
+}
+
+/*END REVIEWS SECCION*/
+
+/*FORM SECTION*/
+
+.contact {
+    background-image: url(/Recursos/Images/contact_g.jpg);
+    background-size: cover; /*cubrir el elemento*/
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+}
+
+.contact-form {   /*caja que contiene el formulario*/
+    border: 1px solid var(--menu-color);
+    padding: 20px;
+    width: 600px; /*forzamos que el formulario tenga una anchura de 600px*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seccion-title-white {
+    text-transform: uppercase; /*TRASNFORMAMOS EL TITULO EN MAYUSCULA*/
+    font-size: 26px;
+    font-family: var(--seccion-title-font);
+    border-bottom: 1px solid var(--menu-color); /*subrayamos la caja del titulo*/
+    margin-bottom: 25px;
+    color: var(--menu-color);
+}
+
+.contact-input {
+    width: 100%; /*la anchura de cada input*/
+    height: 40px;
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: none; /*quita marco del box*/
+    outline: none; /*quita el relieve del box*/
+    border: 1px solid var(--menu-color);
+    color: var(--menu-color);
+}
+
+.contact-textarea {
+    color: var(--menu-color);
+    background-color: transparent;
+    padding: 60px 10px; /*distancia centrada message*/
+    box-shadow: none; /*quita marco del box*/
+    outline: none; /*quita el relieve del box*/
+    border: 1px solid var(--menu-color);
+    color: var(--menu-color);
+    resize: none; /*quita opcion de agrandar area de excritura*/
+    width: 100%;  /*ancho y largo de la caja textarea*/
+    height: 140px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-input::placeholder {
+    color: var(--menu-color);
+    opacity: 1;
+}
+.contact-input::-moz-placeholder {
+    color: var(--menu-color);
+    opacity: 1;
+}
+
+.contact-textarea::placeholder {
+    color: var(--menu-color);
+    opacity: 1;
+}
+
+.contact-textarea::moz-placeholder {
+    color: var(--menu-color);
+    opacity: 1;
+}
+
+.contact-btn {
+        color: var(--menu-color);
+        padding: 15px 60px;
+        border: 2px solid var(--secundary-color);
+        background-color: var(--secundary-color);
+        text-decoration: none;
+        max-width: 170px;
+        border-radius: 25px; 
+        margin-top: 10px; /*distancia desde el comienzo y entre botones*/
+        cursor: pointer;
+}
+
+.contact-btn:hover {
+        color: var(--secundary-color);
+        background-color: transparent;
+}
+
+@media(max-width:600px) { /*si la tarjeta tiene 800px un ves que la tarjeta llegue a los 800px se comporte asi*/
+        .contact-form {
+            width: 96%; /*que la reviews.card tomo el 96% de la imagen asi entra y encuadra bienc y deja los margenes bien*/
+        }
+}
+
+/*END FORM SECTION*/
+
+/*FOOTER SECTION*/
+    
+footer {
+    background-image: url(/Recursos/Images/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.copyright {
+    width: 1000px;
+    color: var(--menu-color);
+    border-top: 1px solid var(--menu-color);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer-content {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
+.footer-card {
+    width: 250px;
+    padding: 20px;
+    color: var(--menu-color);
+}
+
+.footer-card h5 {
+    font-size: 20px;
+}
+
+.footer-card p {
+    font-size: 13px;
+}
+
+.sub-input {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    font-family: var(--seccion-title-font);
+}
+
+.sub-btn {
+    color: var(--menu-color);
+    padding: 7px 30px;
+    border: 2px solid var(--secundary-color);
+    background-color: var(--secundary-color);
+    text-decoration: none;
+    border-radius: 10px; 
+    margin-top: 5px; /*distancia desde el comienzo y entre botones*/
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    color: var(--secundary-color);
+    background-color: transparent;
+}
+
+.social-icons a {
+    color: var(--menu-color);
+    font-size: 20px;
+    margin: 5px;
+}
+
+@media(max-width:1000px) { /*si la tarjeta tiene 800px un ves que la tarjeta llegue a los 800px se comporte asi*/
+    .footer-content {
+        width: 96%; /*que la reviews.card tomo el 96% de la imagen asi entra y encuadra bienc y deja los margenes bien*/
+    }
+
+    .copyright {
+        width: 96%;
+    }
+}
+/*END FOOTER SECTION*/
